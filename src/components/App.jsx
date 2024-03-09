@@ -19,7 +19,7 @@ import Emojie from "./emojie";
 // }
 
 
-function CreateEmojie(emojiTerm) {
+/*function CreateEmojie(emojiTerm) {
   return (
    
     <Emojie 
@@ -30,14 +30,18 @@ function CreateEmojie(emojiTerm) {
       />
   );
 }
-
+*/
 function App() {
   return (
     <div>
       <h1>
         <span>emojipedia</span>
       </h1>
-      <dl className="dictionary">{emojipedia.map(CreateEmojie)}</dl>
+      <dl className="dictionary">
+        {emojipedia.map(emojiTerm => (
+          <Emojie key={emojiTerm.id} emoji={emojiTerm.emoji} name={emojiTerm.name} meaning={emojiTerm.meaning}/>
+        ))}
+      </dl>
     </div>
   );
 }
